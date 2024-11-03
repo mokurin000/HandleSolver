@@ -19,7 +19,11 @@ def split_pinyin(pinyin: str) -> dict[str, str | None]:
         pinyin = pinyin.removesuffix(",")
 
     if pinyin in STANDALONE or pinyin in VOWEL_SIGN:
-        return (None, None, pinyin)
+        return {
+            "initial": None,
+            "prenuclear": None,
+            "vowel": pinyin,
+        }
 
     initial = None
     for sign in INITIAL_SIGN:
