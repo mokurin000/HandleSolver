@@ -1,0 +1,2 @@
+class PinyinException(Exception):
+    pass
